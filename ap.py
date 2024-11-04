@@ -72,7 +72,7 @@ def plot_stock_data(processed_data, future_dates, predictions):
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=one_month_data.index, y=one_month_data['Close'],
-                             mode='lines', name='Last 1 Month Prices', line=dict(color='black')))
+                             mode='lines', name='Last 1 Month Prices', line=dict(color='yellow')))
 
     future_prices = [one_month_data['Close'].values[-1]]
     for pred in predictions:
@@ -87,6 +87,8 @@ def plot_stock_data(processed_data, future_dates, predictions):
         yaxis_title='Price',
         legend_title='Legend',
         template='plotly_white',
+        plot_bgcolor='white',
+        paper_bgcolor='white',
         legend=dict(
             orientation="h",
             yanchor="bottom",
