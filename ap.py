@@ -49,7 +49,7 @@ st.markdown("""
         }
         
         .stButton>button:hover {
-            background-color: #0277BD;
+            background-color: #39FF14;
         }
         
         /* Style the text */
