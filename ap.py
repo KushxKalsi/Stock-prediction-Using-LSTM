@@ -72,20 +72,28 @@ def plot_stock_data(processed_data, future_dates, predictions):
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=one_month_data.index, y=one_month_data['Close'],
-                             mode='lines', name='Last 1 Month Prices'))
+                             mode='lines', name='Last 1 Month Prices', line=dict(color='black')))
 
     future_prices = [one_month_data['Close'].values[-1]]
     for pred in predictions:
         future_prices.append(future_prices[-1] * (1 + pred / 100))
 
-    fig.add_trace(go.Scatter(x=future_dates, y=future_prices[1:], mode='lines', name='Predicted Prices', line=dict(dash='dash')))
+    fig.add_trace(go.Scatter(x=future_dates, y=future_prices[1:], mode='lines', name='Predicted Prices',
+                             line=dict(dash='dash', color='red')))
 
     fig.update_layout(
         title='Stock Price Prediction (Last 1 Month + Next 5 Days)',
         xaxis_title='Date',
         yaxis_title='Price',
         legend_title='Legend',
-        template='plotly_dark'
+        template='plotly_white',
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
 
     st.plotly_chart(fig)
