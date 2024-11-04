@@ -4,7 +4,7 @@ import joblib
 import yfinance as yf
 from keras.models import load_model
 import streamlit as st
-from datetime import datetime, timedelta
+from datetime import datetime
 import plotly.graph_objs as go
 
 # Load models and scaler
@@ -82,10 +82,10 @@ def plot_stock_data(processed_data, future_dates, predictions):
                              line=dict(dash='dash', color='red')))
 
     fig.update_layout(
-        title='Stock Price Prediction (Last 1 Month + Next 5 Days)',
+        title=dict(text='Stock Price Prediction (Last 1 Month + Next 5 Days)', font=dict(color='black')),
         xaxis_title='Date',
         yaxis_title='Price',
-        legend_title='Legend',
+        legend_title=dict(text='Legend', font=dict(color='black')),
         template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
