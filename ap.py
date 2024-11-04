@@ -90,12 +90,15 @@ def plot_stock_data(processed_data, future_dates, predictions):
         plot_bgcolor='white',
         paper_bgcolor='white',
         font=dict(color='black'),
+        xaxis=dict(title_font=dict(color='black'), tickfont=dict(color='black')),
+        yaxis=dict(title_font=dict(color='black'), tickfont=dict(color='black')),
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=0.95,  # Slightly lower than the top
+            y=0.95,
             xanchor="right",
-            x=1
+            x=1,
+            font=dict(color='black')
         )
     )
 
