@@ -12,53 +12,6 @@ xgb_model = joblib.load('xgboost_stock_model.pkl')
 lstm_model = load_model('lstm_stock_model.h5')
 scaler = joblib.load('scaler.pkl')
 
-# Add custom CSS for a darker blue background and improved aesthetics
-st.markdown("""
-    <style>
-        /* Set the background color */
-        .main {
-            background-color: #B3E5FC;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .stApp {
-            background-color: #B3E5FC;
-        }
-        /* Customize the title */
-        h1 {
-            color: #01579B;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        /* Style the selectbox */
-        .stSelectbox {
-            font-size: 16px;
-            color: #004D40;
-        }
-        
-        /* Customize other elements */
-        .stButton>button {
-            background-color: #0288D1;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        
-        .stButton>button:hover {
-            background-color: #39FF14;
-        }
-        
-        /* Style the text */
-        .stMarkdown, .stText {
-            color: #004D40;
-            font-family: 'Arial', sans-serif;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 # Function to fetch all stock tickers (Example: S&P 500)
 def get_all_stock_tickers():
