@@ -93,7 +93,7 @@ def plot_stock_data(processed_data, future_dates, predictions):
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=1.02,
+            y=0.95,  # Slightly lower than the top
             xanchor="right",
             x=1
         )
