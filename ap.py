@@ -102,7 +102,7 @@ def predict_stock(ticker):
 
 # Function to plot stock prices and predictions
 def plot_stock_data(processed_data, future_dates, predictions):
-    one_month_data = processed_data.tail(200)
+    one_month_data = processed_data.tail(50)
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=one_month_data.index, y=one_month_data['Close'],
